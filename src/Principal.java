@@ -88,6 +88,8 @@ public class Principal {
 				JOptionPane.showMessageDialog(null, 
 						monto + " Won sul-coreanos son: " + divisasDecimal.format(wonQ)+ " Quetzales ");
 			}
+			
+			deseaContinuar();
 		}
 
 		//Convertir Temperatura
@@ -105,7 +107,26 @@ public class Principal {
 			
 			String seleccion = (String) JOptionPane.showInputDialog(null, "Elije el valor de la temperatura a la que deseas convertir", 
 					"Temperatura",JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+			
+			//logica conversion Temperatura
+			
+			
+			//finalizar programa 
+			deseaContinuar();
+			
 	}
+		
+		public static void deseaContinuar() {
+			int response = JOptionPane.showConfirmDialog(null, 
+					"¿Desea Continuar?", "Select an option", JOptionPane.YES_NO_CANCEL_OPTION);
+			if(response == JOptionPane.YES_OPTION) {
+				main(null);
+			} else {
+				JOptionPane.showMessageDialog(null, "Programa finalizado", "End", JOptionPane.INFORMATION_MESSAGE);
+			}
+			
+		}
+		
 		
 
 }
