@@ -24,11 +24,19 @@ public class Principal {
 		
 		public static void convertirDinero() {
 			DecimalFormat divisasDecimal = new DecimalFormat();
-			double monto;
-			monto = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad a convertir"));
+			double monto = 0;
+			//monto = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad a convertir"));
 			//String valor = JOptionPane.showInputDialog("Ingrese la cantidad a convertir");
 			//System.out.println(monto);
-	
+			
+			//try catch
+			try {
+				monto =Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad a convertir"));
+			}
+			catch (NumberFormatException e){
+				JOptionPane.showMessageDialog(null, "Error" );
+				convertirDinero();
+			}
 
 			//opciones convertirDInero
 			
