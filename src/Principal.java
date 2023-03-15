@@ -34,11 +34,11 @@ public class Principal {
 				monto =Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad a convertir"));
 			}
 			catch (NumberFormatException e){
-				JOptionPane.showMessageDialog(null, "Error" );
+				JOptionPane.showMessageDialog(null, "El valor no es válido" );
 				convertirDinero();
 			}
 
-			//opciones convertirDInero
+			//opciones convertirDinero
 			
 			Object[] opciones = {"De Quetzal a Dólar",
 					"De Quetzal a Euros",
@@ -102,10 +102,22 @@ public class Principal {
 
 		//Convertir Temperatura
 		public static void convertirTemperatura() {
-			double monto;
-			monto = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
+			DecimalFormat divisasDecimal = new DecimalFormat();
+			double grado = 0;
+			//grado = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor a convertir"));
 			//String temp = JOptionPane.showInputDialog("Ingrese el valor a convertir");
-			System.out.println(monto);
+			//System.out.println(monto);
+			
+			//try catch
+			try {
+				grado =Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad a convertir"));
+			}
+			catch (NumberFormatException e){
+				JOptionPane.showMessageDialog(null, "El valor no es válido" );
+				convertirTemperatura();
+			}
+			
+			//opciones convertirDinero
 			
 			Object[] opciones = {"Grados Celsius a Grados Farenheit",
 					"Grados Celsius a Grados Kelvin",
@@ -117,7 +129,27 @@ public class Principal {
 					"Temperatura",JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 			
 			//logica conversion Temperatura
-			
+			if (seleccion.equals("Grados Celsius a Grados Farenheit")) {
+				double far = (1.8 * grado) + 32 ;
+				JOptionPane.showMessageDialog(null, 
+						grado + " Celsius son: " + divisasDecimal.format(far)+ " grados Farenheit");
+			} else if (seleccion.equals("Grados Celsius a Grados Kelvin")) {
+				double kel = grado + 273.15 ;
+				JOptionPane.showMessageDialog(null, 
+						grado + " Celsius son: " + divisasDecimal.format(kel)+ " Grados Kelvin ");
+			} else if (seleccion.equals("Grados Farenheit a Grados Celsius")) {
+				double cel = (grado - 32) / 1.8 ;
+				JOptionPane.showMessageDialog(null, 
+						grado + " Farenheit son: " + divisasDecimal.format(cel)+ " Grados Celsius ");
+			} else if (seleccion.equals("Kelvin a Grados Celsius")) {
+				double cel2 = grado - 273.15 ;
+				JOptionPane.showMessageDialog(null, 
+						grado + " Kelvin son: " + divisasDecimal.format(cel2)+ " Grados Celsius ");
+			}else if (seleccion.equals("Kelvin a Grados Farenheit")) {
+				double far2 = ((grado - 273.15) * 1.8) + 32 ;
+				JOptionPane.showMessageDialog(null, 
+						grado + " Kelvin son: " + divisasDecimal.format(far2)+ " Grados Farenheit ");
+			}
 			
 			//finalizar programa 
 			deseaContinuar();
