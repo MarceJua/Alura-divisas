@@ -8,9 +8,7 @@ Otra implementacion es la conversión entre temperaturas._
 
 ## Vista del proyecto 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
+[![Alt text](https://img.youtube.com/vi/nfmuOTRMO_c/0.jpg)](https://www.youtube.com/watch?v=nfmuOTRMO_c)
 
 ### Instalación 🔧
 
